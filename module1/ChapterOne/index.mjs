@@ -1,11 +1,11 @@
-import readLine from '../readLine.mjs';
+import readLine from '../../readLine.mjs';
 import { checkForEven,
     natureOfNumbers,
     convertToMinutes
  } from './javascriptOperators.mjs';
 
 export function executeActivity1(){ 
- readLinene.on('line', checkForEven);
+ readLine.on('line', checkForEven);
 }
 
 export function executeActivity2(){ 
