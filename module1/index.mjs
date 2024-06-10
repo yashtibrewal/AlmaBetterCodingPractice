@@ -1,18 +1,11 @@
-import readline from 'readline';
+import readLine from '../readLine.mjs';
 import { checkForEven,
     natureOfNumbers,
     convertToMinutes
  } from './javascriptOperators.mjs';
 
-/**
- * Since I only need the input, and I will use console.log for ouput.
- */
-const readLine = readline.createInterface(
-    process.stdin, null
-)
-
 export function executeActivity1(){ 
- readLine.on('line', checkForEven);
+ readLinene.on('line', checkForEven);
 }
 
 export function executeActivity2(){ 
