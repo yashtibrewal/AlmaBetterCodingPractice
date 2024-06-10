@@ -1,4 +1,5 @@
 import executeClimbingStairsWays from './codingplatformquestions/climbingStairs.mjs';
+import executelongestPalindrome from './codingplatformquestions/longestPalindrome.mjs';
 import {
     executeActivity1,
     executeActivity2,
@@ -8,4 +9,6 @@ import {
 // executeActivity2();
 // executeActivity3();
 
-executeClimbingStairsWays();
+// executeClimbingStairsWays();
+
+// executelongestPalindrome();
