@@ -1,4 +1,3 @@
-import lodash from 'lodash';
 
 function counter(num){
 
