@@ -1,5 +1,5 @@
 'use strict'
-import readLine from "../readLine.mjs";
+import readLine from "../../readLine.mjs";
 
 function climbStairs(n) {
 

@@ -1,6 +1,6 @@
 "use strict"
 
-import readLine from "../readLine.mjs";
+import readLine from "../../readLine.mjs";
 
 // Palindrome is 2+ length.
 
