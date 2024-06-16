@@ -1,27 +1,33 @@
-'use strict'
-const person = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 30,
-    country: "USA"
-  };
 
-function keysInObject(obj){
-  return Object.keys(obj);
-}
 
-console.log(keysInObject(person));
+function isLeapYear(year){
 
-function removeVovels(sentence){
-
-  const vowels = ['a','e','i','o','u'];
-
-  if(typeof sentence == "string"){
-
-    return sentence.split("").filter(ch => !(vowels.includes(ch))).join("");
-
-  }
+    if(year%400 == 0){
+        return true;
+    }
+    if(year%100 != 0 && year%4==0){
+        return true;
+    }
+    return false;
 
 }
 
-console.log(removeVovels("Hello, how are you?"));
+console.log(isLeapYear(1600));
+console.log(isLeapYear(2004));
+console.log(isLeapYear(1500));
+
+function toLowerCase(story){
+    return story.toLowerCase();
+}
+
+console.log(toLowerCase("THis is a story."));
+
+function lastWordLength(sentence){
+
+    const words = sentence.split(" ");
+    
+    return words[words.length-1].length;
+
+}
+
+console.log(lastWordLength("Hello Worlds"));
