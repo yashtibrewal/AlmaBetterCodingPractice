@@ -31,8 +31,8 @@ export function convertTemperature(temperature, unit) {
 
 export function calculateTip(billAmount, tipPercentage) {
     // Write your code here
-    let tipAmount = billAmount * tipPercentage;
-    let totalAmount = billAmount + tipAmount;
+    const tipAmount = billAmount * tipPercentage;
+    const totalAmount = billAmount + tipAmount;
     return totalAmount.toFixed(2);
 }
 
