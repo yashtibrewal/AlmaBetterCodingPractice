@@ -1,4 +1,4 @@
-import { implementBubbleSort, mergeSort } from "../../../module2/Chapter2/lesson1.mjs";
+import { implementBubbleSort, mergeSort } from "../../../module2/Chapter2/lesson2.mjs";
 
 test('empty array should return empty array - bubble sort', () => {
     const result = implementBubbleSort([]);
