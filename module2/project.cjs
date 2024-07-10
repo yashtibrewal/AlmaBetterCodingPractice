@@ -177,30 +177,37 @@ function isPalindrome(n) {
 // console.log(isPalindrome(12345));
 
 var fairCandySwap = function (aliceSizes, bobSizes) {
-    let sumAlice = 0, sumBob = 0;
+    // let sumAlice = 0, sumBob = 0;
+
+    const sumMap = new Map();
+    sumMap.set('alice', 0);
+    sumMap.set('bob', 0);
 
     for (let i = 0; i < aliceSizes.length; i++) {
-        sumAlice += aliceSizes[i];
+        // sumAlice += aliceSizes[i];
+        sumMap.set('alice', sumMap.get('alice') + aliceSizes[i])
     }
 
     for (let i = 0; i < bobSizes.length; i++) {
-        sumBob += bobSizes[i];
+        // sumBob += bobSizes[i];
+        sumMap.set('bob', sumMap.get('bob') + bobSizes[i]);
     }
 
-    let sum = (sumAlice + sumBob) / 2;
+    let sum = (sumMap.get('alice') + sumMap.get('bob')) / 2;
 
     for (let i = 0; i < aliceSizes.length; i++) {
         let a = aliceSizes[i];
 
-        let b = sum - (sumAlice - a);
+        let b = sum - (sumMap.get('alice') - a);
 
         if (bobSizes.includes(b))
             return [a, b];
     }
 };
 
-// console.log(fairCandySwap([1,1],[2,2]));
-// console.log(fairCandySwap([1,2],[2,3]));
+console.log(fairCandySwap([1,1],[2,2]));
+console.log(fairCandySwap([1,2],[2,3]));
+console.log(fairCandySwap([10,6,5,4,5],[2,4,2,3,15]));
 
 function nextGreatestLetter(letters, target) {
     // linear search
@@ -1096,20 +1103,20 @@ function worstLengthOfLastWord(s) {
 // Best Case
 
 function bestLengthOfLastWord(s) {
-        // Write your code inside this function only.
-        s = s.trim();
-        let len = s.length;
-        let result = 0;
-        for (let i = len - 1; i >= 0; i--) {
+    // Write your code inside this function only.
+    s = s.trim();
+    let len = s.length;
+    let result = 0;
+    for (let i = len - 1; i >= 0; i--) {
 
-            if (s[i] == ' ') { break; }
-            result++;
+        if (s[i] == ' ') { break; }
+        result++;
 
-        }
-        return result;
-        // Space Complexity = O(1)
-        // Time Complexity = O(n)
     }
+    return result;
+    // Space Complexity = O(1)
+    // Time Complexity = O(n)
+}
 
 // console.log(bestLengthOfLastWord("Hellow WOrld"));
 // console.log(worstLengthOfLastWord("fly me to the moon "));
