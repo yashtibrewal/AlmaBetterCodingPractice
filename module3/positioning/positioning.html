@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Positioning Practice</title>
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #bg {
+            position: sticky;
+            z-index: 10;
+            top: 0px;
+            width: 100%;
+        }
+
+        #first {
+            position: sticky;
+            z-index: 11;
+            top: 100px;
+        }
+
+        #second {
+            position: sticky;
+            z-index: 12;
+        }
+
+        .content {
+            width: 100%;
+            height: 100vh;
+            background-color: antiquewhite;
+
+        }
+
+        img {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="effect">
+
+
+            <img id="bg" src="bg.png" />
+            <img id="first" src="first.png" />
+            <img id="second" src="second.png" />
+
+
+        </div>
+
+    </div>
+
+</body>
+
+
+</html>
