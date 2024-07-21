@@ -110,23 +110,18 @@ export function fizzBuzz(n) {
     const result = [];
 
     for (let i = 1; i <= n; i++) {
-        switch (i % 3 === 0 && i % 4 === 0) {
-            case true: result.push("FizzBuzz"); break;
-            case false:
-                switch (i % 3 === 0) {
-                    case true: result.push("Fizz");
-                        break;
-                    case false:
-                        switch (i % 4 == 0) {
-                            case true:
-                                result.push("Buzz");
-                                break;
-                            case false:
-                                result.push(i.toString());
-                                break;
-                        }
-                        break;
-                }
+        switch (true) {
+            case i % 3 === 0 && i % 4 === 0:
+                result.push("FizzBuzz");
+                break;
+            case i % 3 === 0:
+                result.push("Fizz");
+                break;
+            case i % 4 == 0:
+                result.push("Buzz");
+                break;
+            default:
+                result.push(i.toString());
                 break;
         }
     }
