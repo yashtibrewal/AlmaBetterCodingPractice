@@ -1,0 +1,29 @@
+body{
+    font-family: sans-serif serif;
+}
+
+#sb-heading{
+    color: blueviolet;
+    padding: 0px 0.5rem 0px 0.5rem;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.sidebar{
+    border: 1px solid #dadada;
+    border-left: 0px;
+    padding: 2rem 0rem 2rem 0rem;
+    width: 10rem;
+    height: 80vh;
+}
+
+.sb-item{
+    padding: 0.5rem;
+    margin: 4px 0px 4px 0px;
+}
+
+.sb-item:hover{
+    font-weight: 600;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
