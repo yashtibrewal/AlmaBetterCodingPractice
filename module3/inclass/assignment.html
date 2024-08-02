@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+
+
+        div {
+            padding: 1rem;
+            margin: 1rem;
+            background-color: antiquewhite;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Assignments</h1>
+    </div>
+    <div>
+
+        <h2>
+            Question 1
+        </h2>
+        Create a button that, when clicked, adds a new list item to an unordered list. Each list item should display
+        the
+        current count of items in the list.
+        </p>
+        <button id="addItemButton">Add Item</button>
+        <ul id="itemList"></ul>
+    </div>
+
+    <div>
+
+        <h2>
+            Question 2
+        </h2>
+        <p>
+            Create a button that, when clicked, changes the text content of a paragraph.
+        </p>
+        <p id="text">Original Text</p>
+        <button id="updateTextButton">Update Text</button>
+    </div>
+
+    <div>
+        <h2>
+            Question 3
+        </h2>
+        <p>
+            Create a button that, when clicked, changes the source of an image.
+        </p>
+        <img id="image" src="https://i.ibb.co/sCpxMjp/image.png" alt="Image" width="300">
+        <button id="changeImageButton">Change Image</button>
+
+    </div>
+
+    <div>
+        <h2>Question 4</h2>
+        <p>Create a button that, when clicked, adds a CSS class to a paragraph, changing its style.</p>
+        <p id="paragraph">This is a paragraph.</p>
+        <button id="addClassButton">Add Class</button>
+    </div>
+
+    <div>
+        <h2>Question 5</h2>
+        <p>Create a button that toggles the visibility of an image.</p>
+        <button id="toggleImageButton">Toggle Image Visibility for question 3</button>
+    </div>
+
+
+    <div>
+        <h2>Question 6</h2>
+        <p>
+            Create a button that counts and displays the number of times it has been clicked.</p>
+        <button id="countButton">Click me</button>
+        <p id="clickCount">Click count: 0</p>
+    </div>
+
+    <div>
+        <h2>Question 7</h2>
+        <p>Create a paragraph that changes its background color when the mouse hovers over it and reverts back when the
+            mouse leaves.</p>
+        <p id="hoverParagraph">Hover over this text to highlight it.</p>
+    </div>
+
+    <div>
+        <h2>Question 8</h2>
+        <p>Create an input field and a button. When the button is clicked, change the color of a paragraph to the color
+            specified in the input field.</p>
+        <input type="text" id="colorInput" placeholder="Enter a color">
+        <button id="changeColorButton">Change Text Color</button>
+        <p id="colorParagraph">This text will change color.</p>
+
+    </div>
+
+    <div>
+        <h2>Question 9</h2>
+        <p>Create a dropdown menu and a button. When the button is clicked, display the selected option in a paragraph
+            below the dropdown.</p>
+        <select id="dropdown">
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+        </select>
+        <button id="displayButton">Display Selected Option</button>
+        <p id="selectedOption">Selected option will be displayed here.</p>
+    </div>
+
+    <div>
+        <h2>Question 10</h2>
+        <p>Create a button that toggles the content of a paragraph between two different texts when clicked.</p>
+        <button id="toggleContentButton">Toggle Content</button>
+        <p id="contentParagraph">This is the first text.</p>
+
+    </div>
+
+    <div>
+        <h2>Question 11</h2>
+        <p>
+            Search in list
+
+            Write a function searchPerson(elemId, name) which takes in a DOM element's id (here "names") and searches
+            the name in the list.
+
+        </p>
+        <ul id="names">
+            <li>Jay</li>
+            <li>Raj</li>
+            <li>Neha</li>
+            <li>Kajal</li>
+        </ul>
+        <input type="text" id="nameInput" placeholder="Enter a name">
+        <button id="searchButton">Search</button>
+        <p id="searchResultParagraph">Result will display here</p>
+    </div>
+
+    <div>
+        <h2>Question 12</h2>
+        <p>
+            Use the starter HTML here and write a function updateCard(elem, name, email, about) which takes in an
+            element to update, name, email, and about as strings and changes the content on the screen.</p>
+        <section id="card">
+            <h1>Old Student Name</h1>
+            <h3>Email</h3>
+            <p>About Text Goes Here</p>
+        </section>
+        <button type="button" onclick="updateCardItems()">Show Details</button>
+    </div>
+    <script>
+
+        // Solution 1
+        document.getElementById('addItemButton').addEventListener('click', () => {
+            let list = document.getElementById('itemList');
+            let item = document.createElement('li');
+            item.textContent = list.children.length + 1;
+            list.appendChild(item);
+        });
+
+        // Solution 2
+        document.getElementById('updateTextButton').addEventListener('click', () => {
+            document.getElementById('text').textContent = 'New Text';
+        })
+
+        // Solution 3
+
+        document.getElementById('changeImageButton').addEventListener('click', () => {
+            document.getElementById('image').setAttribute('src', 'https://i.ibb.co/3pRvfgy/image.png')
+        })
+
+        // Solution 4
+
+        document.getElementById('addClassButton').addEventListener('click', () => {
+            document.getElementById('paragraph').style.color = 'red';
+        })
+
+        // Solution 5
+
+        document.getElementById('toggleImageButton').addEventListener('click', () => {
+            let img = document.getElementById('image');
+            if (img.style.visibility == 'visible') {
+                img.style.visibility = 'hidden';
+            } else {
+                img.style.visibility = 'visible';
+            }
+        })
+
+        // Solution 6
+        let clickCount = 0;
+        document.getElementById('countButton').addEventListener('click', () => {
+            clickCount++;
+            document.getElementById('clickCount').textContent = `Click count: ${clickCount}`;
+        })
+
+        // Solution 7
+        let hoverParagraph = document.getElementById('hoverParagraph');
+
+        hoverParagraph.addEventListener('mouseenter', () => {
+            hoverParagraph.classList.add('highlight');
+        });
+        hoverParagraph.addEventListener('mouseleave', () => {
+            hoverParagraph.classList.remove('highlight');
+        });
+
+        // Solution 8
+
+        document.getElementById('changeColorButton').addEventListener('click', () => {
+            let color = document.getElementById('colorInput').value;
+            document.getElementById('colorParagraph').style.color = color;
+        })
+
+        // Solution 9
+
+        document.getElementById('displayButton').addEventListener('click', () => {
+            let value = document.getElementById('dropdown').value;
+            document.getElementById('selectedOption').textContent = value;
+        })
+
+        // Solution 10
+
+        let newContent = 'This is new content';
+        let oldContent = document.getElementById('contentParagraph').textContent;
+        document.getElementById('toggleContentButton').addEventListener('click', () => {
+            let contentParagraph = document.getElementById('contentParagraph');
+            if (contentParagraph.textContent == oldContent) {
+                contentParagraph.textContent = newContent;
+            } else {
+                contentParagraph.textContent = oldContent;
+            }
+        })
+
+        // Solution 11
+
+        document.getElementById('searchButton').addEventListener('click', () => {
+
+            let elem = document.getElementById('names');
+            let name = document.getElementById('nameInput').value
+            let para = document.getElementById('searchResultParagraph');
+            if (searchPerson(elem, name)) {
+                para.textContent = 'Found';
+            } else {
+                para.textContent = 'Not Found';
+            }
+        })
+
+
+        function searchPerson(element, name) {
+            let arr = Array.from(element.getElementsByTagName('li'));
+            return arr.map(item => item.textContent).includes(name);
+        }
+
+        // Solution 12
+
+        function setCardItems(element, name, email, about) {
+            element.querySelector('h1').textContent = name;
+            element.querySelector('h3').textContent = email;
+            element.querySelector('p').textContent = about;
+        }
+
+        function updateCardItems() {
+            let card = document.getElementById('card');
+            setCardItems(card, 'Yash', 'yashkush.tibrewal@gmail.com', 'Full Stack Developer');
+        }
+
+    </script>
+
+</body>
+
+</html>
