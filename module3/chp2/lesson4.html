@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+
+        body {
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        div {
+            width: 80%;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Assignment JQuerys</h1>
+    <div>
+        <h2>Question 1</h2>
+        <p>You want to replace the content of a div with a new paragraph containing some HTML.</p>
+        <div id="container">Old content</div>
+    </div>
+    <div>
+        <h2>Question 2</h2>
+        <p>You want to add a paragraph immediately after an image.</p>
+        <img id="myImage" src="image.jpg" alt="An image">
+    </div>
+    <div>
+        <h2>Question 3</h2>
+        <p>Change the source of an image when a button is clicked.</p>
+        <img id="myImage2" src="oldImage.jpg" alt="An image">
+        <button id="changeImage">Change Image</button>
+    </div>
+    <div>
+        <h2>Question 4</h2>
+        <p>Remove the disabled attribute from an input field to enable it.</p>
+        <input id="myInput" type="text" disabled>
+        <button id="enableInput">Enable Input</button>
+    </div>
+    <div>
+        <h2>Question 5</h2>
+        <p>Set the value of a text input field when a button is clicked.</p>
+        <input id="myInput2" type="text" placeholder="Enter your name">
+        <button id="setName">Set Name</button>
+    </div>
+    <div id="hl">
+        <h2>Question 6</h2>
+        <p>Highlighting paragraphs when a button is clicked.</p>
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <button id="highlightBtn">Highlight Paragraphs</button>
+    </div>
+    <div id="thl">
+        <h2>Question 7</h2>
+        <p>Toggle the highlighting of paragraphs when a button is clicked.</p>
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <button id="toggleHighlightBtn">Toggle Highlight</button>
+    </div>
+    <div>
+        <h2>Question 8</h2>
+        <p>Toggle the highlight class on elements based on their width when a button is clicked.</p>
+        <div class="myElement" style="width: 250px;">Wide element</div>
+        <div class="myElement" style="width: 150px;">Narrow element</div>
+        <button id="conditionalToggleBtn">Conditional Toggle</button>
+    </div>
+    <div>
+        <h2>Question 9</h2>
+        <p>Fade in and fade out elements when buttons are clicked.</p>
+        <h1 id="header">Welcome to jQuery</h1>
+        <p id="text">This is a paragraph that will fade in and out.</p>
+        <button id="fadeInBtn">Fade In</button>
+        <button id="fadeOutBtn">Fade Out</button>
+    </div>
+    <div>
+        <h2>Question 10</h2>
+        <p>Adjust the size of a box when a button is clicked.</p>
+        <div id="box" style="background-color: lightblue;">Box</div>
+        <button id="resizeBtn">Resize Box</button>
+    </div>
+    <script>
+        $(document).ready(() => {
+            $('#container').html('<p>Updated</p>');
+
+            $('#myImage').after('<p>After an image</p>');
+
+            $('#changeImage').click(() => {
+                $('#myImage2').attr('src', 'new link');
+            });
+
+            $('#enableInput').click(() => {
+                $('#myInput').removeAttr('disabled');
+            });
+
+            $('#setName').click(() => {
+                $('#myInput2').val('Yash Tibrewal');
+            });
+
+            $('#highlightBtn').click(() => {
+                $('#hl > p').css({
+                    backgroundColor: 'yellow'
+                })
+            });
+            $('#toggleHighlightBtn').click(() => {
+                $('#thl > p').toggleClass('highlight');
+            });
+
+            $(".myElement").each(function () {
+                if ($(this).width() > 200)
+                    $(this).addClass('highlight');
+            });
+
+            $("#conditionalToggleBtn").click(function () {
+                $(".myElement").each(function () {
+                    $(this).toggleClass('highlight');
+                })
+            });
+
+            $("#fadeInBtn").click(function () {
+                $('#text').fadeIn();
+            });
+            $("#fadeOutBtn").click(function () {
+                $('#text').fadeOut();
+            });
+            let originalWidth = $('#box').width();
+            $('#resizeBtn').click(function () {
+                let width = $('#box').width();
+                $('#box').width(originalWidth * Math.random(0,1));
+            })
+        })
+    </script>
+</body>
+
+</html>

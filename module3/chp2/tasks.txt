@@ -1,0 +1,175 @@
+You want to replace the content of a div with a new paragraph containing some HTML.
+
+<div id="container">Old content</div>
+
+
+
+
+
+
+
+
+
+$('#container').html('<p>New HTML content with <strong>bold</strong> text.</p>');
+
+
+
+
+
+You want to add a paragraph immediately after an image.
+
+<img id="myImage" src="image.jpg" alt="An image">
+
+$('#myImage').after('<p>This is an image description.</p>');
+
+
+
+
+
+Change the source of an image when a button is clicked.
+
+<img id="myImage" src="oldImage.jpg" alt="An image">
+<button id="changeImage">Change Image</button>
+
+$('#changeImage').click(function() {
+  $('#myImage').attr('src', 'newImage.jpg');
+});
+
+
+
+
+
+Remove the disabled attribute from an input field to enable it.
+
+<input id="myInput" type="text" disabled>
+<button id="enableInput">Enable Input</button>
+
+$('#enableInput').click(function() {
+  $('#myInput').removeAttr('disabled');
+});
+
+
+
+
+
+Set the value of a text input field when a button is clicked.
+
+<input id="myInput" type="text" placeholder="Enter your name">
+<button id="setName">Set Name</button>
+
+$('#setName').click(function() {
+  $('#myInput').val('John Doe');
+});
+
+
+
+
+
+Highlighting paragraphs when a button is clicked.
+
+<p>First paragraph</p>
+<p>Second paragraph</p>
+<button id="highlightBtn">Highlight Paragraphs</button>
+
+.highlight {
+  background-color: "yellow"
+}
+
+$('#highlightBtn').click(function() {
+  $('p').addClass('highlight');
+});
+
+
+
+
+
+Toggle the highlighting of paragraphs when a button is clicked.
+
+<p>First paragraph</p>
+<p>Second paragraph</p>
+<button id="toggleHighlightBtn">Toggle Highlight</button>
+
+.highlight {
+  background-color: "yellow"
+}
+
+$('#toggleHighlightBtn').click(function() {
+  $('p').toggleClass('highlight');
+});
+
+
+
+
+
+Toggle the highlight class on elements based on their width when a button is clicked.
+
+<div class="myElement" style="width: 250px;">Wide element</div>
+<div class="myElement" style="width: 150px;">Narrow element</div>
+<button id="conditionalToggleBtn">Conditional Toggle</button>
+
+$('#conditionalToggleBtn').click(function() {
+  $('.myElement').toggleClass(function() {
+    return $(this).width() > 200 ? 'highlight' : '';
+  });
+});
+
+
+
+
+
+Adjust the size of a box when a button is clicked.
+
+<div id="box" style="background-color: lightblue;">Box</div>
+<button id="resizeBtn">Resize Box</button>
+
+$('#resizeBtn').click(function() {
+  $('#box').width(300);
+  $('#box').height(200);
+});
+
+
+
+
+
+Toggle the visibility of an element when buttons are clicked.
+
+<p id="paragraph">This is a paragraph.</p>
+<button id="showBtn">Show Paragraph</button>
+<button id="hideBtn">Hide Paragraph</button>
+
+$('#showBtn').click(function() {
+  $('#paragraph').show();
+});
+
+$('#hideBtn').click(function() {
+  $('#paragraph').hide();
+});
+
+
+
+
+
+Fade in and fade out elements when buttons are clicked.
+
+<h1 id="header">Welcome to jQuery</h1>
+<p id="text">This is a paragraph that will fade in and out.</p>
+<button id="fadeInBtn">Fade In</button>
+<button id="fadeOutBtn">Fade Out</button>
+
+$('#fadeInBtn').click(function() {
+  $('#header').fadeIn();
+  $('#text').fadeIn();
+});
+
+$('#fadeOutBtn').click(function() {
+  $('#header').fadeOut();
+  $('#text').fadeOut();
+});
+
+
+
+
+
+
+
+
